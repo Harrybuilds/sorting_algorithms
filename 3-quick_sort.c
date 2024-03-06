@@ -49,9 +49,9 @@ void swap(int *a, int *b)
 int partition(int arr[], int low, int high)
 {
 	int pivot = arr[high]; /* Select the pivot as the last element*/
-	int i = low - 1; /* Index of the smaller element*/
+	int i = low - 1, j; /* Index of the smaller element*/
 
-	for (int j = low; j <= high - 1; j++)
+	for (j = low; j <= high - 1; j++)
 	{
 		/* If current element is smaller than or equal to pivot*/
 		if (arr[j] <= pivot)
