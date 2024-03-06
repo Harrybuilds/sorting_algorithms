@@ -1,6 +1,5 @@
 #include "sort.h"
 
-
 /***
  * quick_sort - function to sort an array using merge sort algorithm
  * @array: array to be sorted
@@ -9,14 +8,14 @@
 */
 void quick_sort(int *array, size_t size)
 {
+	int low = 0; /* Start index of the array*/
+	int high = size - 1, pi; /* End index of the array*/
+
 	if (size < 2) /* Base case: if size is 1 or 0, array is already sorted*/
 		return;
 
-	int low = 0; /* Start index of the array*/
-	int high = size - 1; /* End index of the array*/
-
 	/* Partition the array using Lomuto scheme */
-	int pi = partition(array, low, high);
+	pi = partition(array, low, high);
 
 	/* Recursively sort elements before and after partition */
 	quick_sort(array, pi); /* Sort left subarray */
@@ -49,9 +48,9 @@ void swap(int *a, int *b)
 int partition(int arr[], int low, int high)
 {
 	int pivot = arr[high]; /* Select the pivot as the last element*/
-	int i = low - 1; /* Index of the smaller element*/
+	int i = low - 1, j; /* Index of the smaller element*/
 
-	for (int j = low; j <= high - 1; j++)
+	for (j = low; j <= high - 1; j++)
 	{
 		/* If current element is smaller than or equal to pivot*/
 		if (arr[j] <= pivot)
