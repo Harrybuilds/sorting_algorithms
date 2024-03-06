@@ -1,6 +1,6 @@
 #include "sort.h"
 
-/***
+/**
  * quick_sort - function to sort an array using merge sort algorithm
  * @array: array to be sorted
  * @size: size of the array to be sorted
