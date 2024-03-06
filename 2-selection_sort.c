@@ -1,6 +1,3 @@
-Put this in a file for task 2 and push to github
-Betty it as well
-
 #include "sort.h"
 
 /**
