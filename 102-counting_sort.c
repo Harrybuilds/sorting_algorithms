@@ -1,7 +1,3 @@
-Task 102 counting sort
-
-Create the file, Betty this code below and push
-
 #include "sort.h"
 
 /**
