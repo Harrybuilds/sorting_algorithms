@@ -2,8 +2,6 @@
 #define SORT_H
 
 #include <stdio.h>
-#include <stdlib.h>
-#include <stdbool.h>
 
 /**
  * struct listint_s - Doubly linked list node
@@ -28,6 +26,7 @@ void swap(int *a, int *b);
 int partition(int arr[], int low, int high);
 void insertion_sort_list(listint_t **list);
 void selection_sort(int *array, size_t size);
+
 void shell_sort(int *array, size_t size);
 void counting_sort(int *array, size_t size);
 void swap_node_ahead(listint_t **head, listint_t **tail, listint_t **swapping);
