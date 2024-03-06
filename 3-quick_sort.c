@@ -9,14 +9,14 @@
 */
 void quick_sort(int *array, size_t size)
 {
+	int low = 0,  pi; /* Start index of the array*/
+	int high = size - 1; /* End index of the array*/
+
 	if (size < 2) /* Base case: if size is 1 or 0, array is already sorted*/
 		return;
 
-	int low = 0; /* Start index of the array*/
-	int high = size - 1; /* End index of the array*/
-
 	/* Partition the array using Lomuto scheme */
-	int pi = partition(array, low, high);
+	pi  = partition(array, low, high);
 
 	/* Recursively sort elements before and after partition */
 	quick_sort(array, pi); /* Sort left subarray */
