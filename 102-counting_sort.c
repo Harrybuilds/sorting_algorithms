@@ -5,13 +5,16 @@
  *                 using the counting sort algorithm.
  * @array: An array of integers.
  * @size: The size of the array.
+ *
+ * Return: nothing is returned
  */
 void counting_sort(int *array, size_t size)
 {
-	int *count, *sorted, max, i;
+	int *count, *sorted, max;
+	size_t i;
 
 	if (array == NULL || size < 2)
-		return;
+	return;
 
 	max = array[0];
 	for (i = 1; i < size; i++)
@@ -34,21 +37,19 @@ void counting_sort(int *array, size_t size)
 	for (i = 0; i < (max + 1); i++)
 		count[i] = 0;
 
-	for (i = 0; i < (int)size; i++)
+	for (i = 0; i < size; i++)
 		count[array[i]] += 1;
 
 	for (i = 1; i < (max + 1); i++)
 		count[i] += count[i - 1];
 
-	print_array(count, max + 1);
-
-	for (i = size - 1; i >= 0; i--)
+	for (i = size - 1; i != (size_t)-1; i--)
 	{
 		sorted[count[array[i]] - 1] = array[i];
 		count[array[i]] -= 1;
 	}
 
-	for (i = 0; i < (int)size; i++)
+	for (i = 0; i < size; i++)
 		array[i] = sorted[i];
 
 	free(sorted);
